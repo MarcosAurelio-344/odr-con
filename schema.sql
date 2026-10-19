@@ -13,21 +13,7 @@ CREATE TABLE colaboradores (
     chave_acesso TEXT NOT NULL UNIQUE,
     ativo INTEGER NOT NULL DEFAULT 1,
     criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
-);
 
-CREATE TABLE reclamacoes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    usuario_id INTEGER,
-    colaborador_id INTEGER,
-    tipo_registro TEXT NOT NULL,
-    texto_original TEXT NOT NULL,
-    texto_tratado TEXT,
-    status TEXT NOT NULL DEFAULT 'PENDENTE',
-    aceite_cliente INTEGER,
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
-    FOREIGN KEY (colaborador_id) REFERENCES colaboradores(id)
 );
 
 
