@@ -30,16 +30,6 @@ CREATE TABLE reclamacoes (
     FOREIGN KEY (colaborador_id) REFERENCES colaboradores(id)
 );
 
-CREATE TABLE tratamentos_ia (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    reclamacao_id INTEGER NOT NULL,
-    texto_original TEXT NOT NULL,
-    texto_tratado TEXT NOT NULL,
-    resultado TEXT NOT NULL,
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (reclamacao_id) REFERENCES reclamacoes(id)
-);
 
 CREATE TABLE tokens_acesso (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
